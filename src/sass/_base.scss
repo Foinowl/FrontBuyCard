@@ -1,0 +1,56 @@
+// $color-primary: #f59a83;
+$color-primary: #5a1094;
+
+$color-grey-light-1: #e6e9f0; // Light background
+
+
+$bp-large: 78.15em; // 1250px
+$bp-medium: 61.25em; // 980px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+
+body {
+  background-color: #e6e9f0;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 700px;
+}
