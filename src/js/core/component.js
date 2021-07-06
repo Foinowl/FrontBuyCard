@@ -1,6 +1,7 @@
 export class Component{
-  constructor($id) {
-    this.$el = document.getElementById($id)
+  constructor(id) {
+    this.$el = document.getElementById(id)
+    this.init()
   }
 
   init() { }
@@ -15,7 +16,7 @@ export class Component{
   }
 
   show() {
-    this.$el.classList.remove("show")
+    this.$el.classList.remove("hide")
 		this.onShow()
   }
 }

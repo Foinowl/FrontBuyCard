@@ -25,11 +25,22 @@ export class Form {
 			const validators = this.controls[control]
 
 			let isValid = true
-			validators.forEach((validator) => {
-				isValid = validator(this.form[control].value) && isValid
-			})
+			for (let i = 0; i < validators.length; i++) {
+				const lst = validators[i]
+				const validator = lst[0]
+				const messageError = lst[1]
 
-			isValid ? clearError(this.form[control]) : setError(this.form[control])
+				isValid = validator(this.form[control].value) && isValid
+
+				if (!isValid) {
+					setError(this.form[control], messageError)
+					break
+				}
+
+				if (isValid) {
+					clearError(this.form[control])
+				}
+			}
 
 			isFormValid = isFormValid && isValid
 		})
@@ -40,15 +51,16 @@ export class Form {
 
 function setError($control, mess) {
 	clearError($control)
-	const error = `<p class="validation-error">${mess}</p>`
-	$control.classList.add("invalid")
-	$control.insertAdjacentHTML("afterend", error)
+
+	const error = `
+		<div class="validation-error">${mess}</div>
+	`
+	$control.insertAdjacentHTML("beforebegin", error)
 }
 
 function clearError($control) {
-	$control.classList.remove("invalid")
-
-	if ($control.nextSibling) {
-		$control.closest(".form-control").removeChild($control.nextSibling)
+	const errorNode = $control.nextSibling.parentNode.querySelector(".validation-error")
+	if (errorNode) {
+		errorNode.remove()
 	}
 }
