@@ -36,6 +36,10 @@ export class ShippingComponent extends Component {
 		this.$el.insertAdjacentHTML("afterbegin", html)
 	}
 
+	onHide() {
+		this.$el.innerHTML = ""
+	}
+
 	get nodeEl() {
 		return this.$el
 	}

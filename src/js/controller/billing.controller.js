@@ -1,6 +1,6 @@
 import { createBillingObject } from "../model/billing.model"
 
-export const submitHandler = function (event) {
+export const submitBillingHandler = function (event) {
 	event.preventDefault()
 
 	this.shippModel = {}

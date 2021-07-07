@@ -4,8 +4,8 @@ import { Validators } from "../core/validators"
 
 export class BillingComponent extends Component {
 	constructor(id, page) {
-    super(id)
-    
+		super(id)
+
 		this.paymentPage = page
 	}
 
@@ -24,7 +24,7 @@ export class BillingComponent extends Component {
 			city: [[Validators.required, "Город обязателен"]],
 			zip: [
 				[Validators.required, "Индекс обязателен"],
-				[Validators.zipRequired, "Введите корректный индекс"]
+				[Validators.zipRequired, "Введите корректный индекс"],
 			],
 		})
 	}
@@ -34,10 +34,13 @@ export class BillingComponent extends Component {
 		this.$el.insertAdjacentHTML("afterbegin", html)
 	}
 
+	onHide() {
+		this.$el.innerHTML = ""
+	}
+
 	get nodeEl() {
 		return this.$el
 	}
-
 
 	get getForm() {
 		return this.form

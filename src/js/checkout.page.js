@@ -1,32 +1,52 @@
 import { Component } from './core/component'
+
 import { ShippingComponent } from './views/shipping.component'
 import { BillingComponent } from "./views/billing.component"
+import { PaymentComponent } from "./views/payment.component"
+import { NavigationComponent } from "./views/navigation.component"
 
-import { submitHandler } from "./controller/shipping.controller"
+import { submitShippingHandler } from "./controller/shipping.controller"
+import { submitBillingHandler } from "./controller/billing.controller"
+import { submitPaymentHandler } from "./controller/payment.controller"
+import { tabClickHandler } from "./controller/navigation.controller"
+
 
 export class Checkout extends Component {
 	constructor(id) {
 		super(id)
-
-		// this.navigation = new NavigationComponent("navigation")
-
-		// this.shippingPage = new ShippingComponent("shipping")
-
-		// this.billing = new BillingComponent("billing")
-		// this.payment = new PaymentComponent("payment")
 	}
 
 	init() {
-		// this.payment = new PaymentComponent("payment")
-		this.billingPage = new BillingComponent("billing")
+		this.paymentPage = new PaymentComponent("payment")
+		this.billingPage = new BillingComponent("billing", this.paymentPage)
 		this.shippingPage = new ShippingComponent("shipping", this.billingPage)
+
+		this.navigation = new NavigationComponent("navigation")
+
+		this.navigation.registerTabs([
+			{ name: "shipping", component: this.shippingPage },
+			{ name: "billing", component: this.billingPage },
+			{ name: "payment", component: this.paymentPage },
+		])
 
 		this.shippingPage.nodeEl.addEventListener(
 			"submit",
-			submitHandler.bind(this.shippingPage)
+			submitShippingHandler.bind(this.shippingPage)
 		)
 
 
-		this.billingPage.nodeEl.addEventListener("submit", ()=>{})
+		this.billingPage.nodeEl.addEventListener(
+			"submit",
+			submitBillingHandler.bind(this.billingPage)
+		)
+
+
+		this.paymentPage.nodeEl.addEventListener(
+			"submit",
+			submitPaymentHandler.bind(this.paymentPage)
+		)
+
+
+		this.navigation.nodeEl.addEventListener("click", tabClickHandler.bind(this.navigation))
 	}
 }

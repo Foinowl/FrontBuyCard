@@ -1,6 +1,6 @@
 import { createShippingObject } from "../model/shipping.model"
 
-export const submitHandler = function (event) {
+export const submitShippingHandler = function (event) {
   	event.preventDefault()
 
     this.shippModel = {}

@@ -70,6 +70,7 @@
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 6px;
+  margin-top: 15px;
 }
 
 .checkout__form-input-wrapper {
@@ -87,7 +88,7 @@
     max-width: 320px;
     padding: 11px 15px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .checkout__form-phone{
@@ -164,3 +165,32 @@
   z-index: -1;
 }
 
+
+.checkout__subtitle{
+  align-items: center;
+  color: #6b6b6b;
+  display: flex;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.checkout__subtitle-label{
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+
+
+.checkout__container-payment{
+  display: flex;
+}
+
+.checkout__container-payment>div:first-child{
+  margin-right: 30px;
+}
+
+
+.checkout__form-input--mini{
+  max-width: 95px;
+}
