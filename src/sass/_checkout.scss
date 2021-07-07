@@ -194,3 +194,21 @@
 .checkout__form-input--mini{
   max-width: 95px;
 }
+
+
+.checkout__first-container{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.checkout__sameas-button{
+  background-color: transparent;
+  border: 0;
+  color: #5a1094;
+  font-size: 12px;
+  padding: 0;
+  text-decoration: underline;
+  width: auto;
+}

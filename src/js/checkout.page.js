@@ -6,7 +6,9 @@ import { PaymentComponent } from "./views/payment.component"
 import { NavigationComponent } from "./views/navigation.component"
 
 import { submitShippingHandler } from "./controller/shipping.controller"
-import { submitBillingHandler } from "./controller/billing.controller"
+import {
+	submitBillingHandler,
+} from "./controller/billing.controller"
 import { submitPaymentHandler } from "./controller/payment.controller"
 import { tabClickHandler } from "./controller/navigation.controller"
 
@@ -52,7 +54,7 @@ export class Checkout extends Component {
 			submitBillingHandler.bind(this.billingPage)
 		)
 
-
+		
 		this.paymentPage.nodeEl.addEventListener(
 			"submit",
 			submitPaymentHandler.bind(this.paymentPage)

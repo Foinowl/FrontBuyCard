@@ -4,7 +4,6 @@ import { nextPageHandler } from "./navigation.controller"
 export const submitShippingHandler = function (event) {
   	event.preventDefault()
 
-    this.shippModel = {}
 		if (this.getForm.isValid()) {
       this.shippModel = createShippingObject({
         type: this.$el.type.value,
