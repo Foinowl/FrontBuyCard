@@ -17,11 +17,23 @@ export class Checkout extends Component {
 	}
 
 	init() {
-		this.paymentPage = new PaymentComponent("payment")
-		this.billingPage = new BillingComponent("billing", this.paymentPage)
-		this.shippingPage = new ShippingComponent("shipping", this.billingPage)
-
 		this.navigation = new NavigationComponent("navigation")
+
+		this.paymentPage = new PaymentComponent(
+			"payment",
+			this.navigation
+		)
+		this.billingPage = new BillingComponent(
+			"billing",
+			this.paymentPage,
+			this.navigation
+		)
+		this.shippingPage = new ShippingComponent(
+			"shipping",
+			this.billingPage,
+			this.navigation
+		)
+
 
 		this.navigation.registerTabs([
 			{ name: "shipping", component: this.shippingPage },

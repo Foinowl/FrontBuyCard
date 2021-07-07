@@ -1,4 +1,5 @@
 import { createShippingObject } from "../model/shipping.model"
+import { nextPageHandler } from "./navigation.controller"
 
 export const submitShippingHandler = function (event) {
   	event.preventDefault()
@@ -11,7 +12,6 @@ export const submitShippingHandler = function (event) {
       })
       console.log(this.shippModel)
 
-      this.hide()
-      this.billingPage.show()
+      nextPageHandler(this, this.billingPage, this.nodeNav)
 		}
 }

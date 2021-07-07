@@ -8,7 +8,6 @@ export const submitPaymentHandler = function (event) {
 		})
 		console.log(this.shippModel)
 
-		this.hide()
-		// this.nextPage.show()
+		nextPageHandler(this, this.billingPage, this.nodeNav)
 	}
 }

@@ -11,7 +11,6 @@ export const submitBillingHandler = function (event) {
 		})
 		console.log(this.shippModel)
 
-		this.hide()
-		this.paymentPage.show()
+		nextPageHandler(this, this.paymentPage, this.nodeNav)
 	}
 }

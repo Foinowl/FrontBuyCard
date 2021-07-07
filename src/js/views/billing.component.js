@@ -3,10 +3,12 @@ import { Form } from "../core/form"
 import { Validators } from "../core/validators"
 
 export class BillingComponent extends Component {
-	constructor(id, page) {
+	constructor(id, page, nav) {
 		super(id)
 
+		this.name = "billing"
 		this.paymentPage = page
+		this.nav = nav
 	}
 
 	init() {
@@ -42,8 +44,16 @@ export class BillingComponent extends Component {
 		return this.$el
 	}
 
+	get nodeNav() {
+		return this.nav
+	}
+
 	get getForm() {
 		return this.form
+	}
+
+	get getName() {
+		return this.name
 	}
 
 	renderInputs() {
