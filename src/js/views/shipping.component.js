@@ -24,7 +24,10 @@ export class ShippingComponent extends Component {
 			street: [[Validators.required, "Улица обязательна"]],
 			apt: [[Validators.required, "Квартира обязательна"]],
 			city: [[Validators.required, "Город обязателен"]],
-			zip: [[Validators.required, "Индекс обязателен"]],
+			zip: [
+				[Validators.required, "Индекс обязателен"],
+				[Validators.zipRequired, "Введите корректный индекс"],
+			],
 		})
 	}
 

@@ -18,12 +18,15 @@ export class Checkout extends Component {
 
 	init() {
 		// this.payment = new PaymentComponent("payment")
-		this.billing = new BillingComponent("billing")
-		this.shippingPage = new ShippingComponent("shipping", this.billing)
+		this.billingPage = new BillingComponent("billing")
+		this.shippingPage = new ShippingComponent("shipping", this.billingPage)
 
 		this.shippingPage.nodeEl.addEventListener(
 			"submit",
 			submitHandler.bind(this.shippingPage)
 		)
+
+
+		this.billingPage.nodeEl.addEventListener("submit", ()=>{})
 	}
 }

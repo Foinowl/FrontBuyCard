@@ -3,26 +3,30 @@ import { Form } from "../core/form"
 import { Validators } from "../core/validators"
 
 export class BillingComponent extends Component {
-	constructor(id) {
+	constructor(id, page) {
     super(id)
     
+		this.paymentPage = page
 	}
 
 	init() {
-		// this.form = new Form(this.$el, {
-		// 	full_name: [
-		// 		[Validators.required, "Имя обязательно"],
-		// 		[Validators.minLength(2), "Минимальная длина имени два символа"],
-		// 	],
-		// 	phone: [
-		// 		[Validators.required, "Телефон обязателен"],
-		// 		[Validators.phoneRequired, "Введите корректный номер телефона"],
-		// 	],
-		// 	street: [[Validators.required, "Улица обязательна"]],
-		// 	apt: [[Validators.required, "Квартира обязательна"]],
-		// 	city: [[Validators.required, "Город обязателен"]],
-		// 	zip: [[Validators.required, "Индекс обязателен"]],
-		// })
+		this.form = new Form(this.$el, {
+			full_name: [
+				[Validators.required, "Имя обязательно"],
+				[Validators.minLength(2), "Минимальная длина имени два символа"],
+			],
+			email: [
+				[Validators.required, "Email обязателен"],
+				[Validators.emailRequired, "Введите корректный Email"],
+			],
+			street: [[Validators.required, "Улица обязательна"]],
+			apt: [[Validators.required, "Квартира обязательна"]],
+			city: [[Validators.required, "Город обязателен"]],
+			zip: [
+				[Validators.required, "Индекс обязателен"],
+				[Validators.zipRequired, "Введите корректный индекс"]
+			],
+		})
 	}
 
 	onShow() {
@@ -33,6 +37,8 @@ export class BillingComponent extends Component {
 	get nodeEl() {
 		return this.$el
 	}
+
+
 	get getForm() {
 		return this.form
 	}
@@ -48,7 +54,7 @@ export class BillingComponent extends Component {
 			</div>
 			<div class="checkout__form-phone">
 				<div class="checkout__form-input-wrapper">
-					<input name="phone" class="checkout__form-input checkout__form-phone-input" placeholder="Phone number">
+					<input name="email" class="checkout__form-input checkout__form-phone-input" placeholder="E-mail">
 				</div>
 				<p class="checkout__form-phone-label">
 					For delivery <br> questions only
