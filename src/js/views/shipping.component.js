@@ -37,7 +37,6 @@ export class ShippingComponent extends Component {
 	}
 
 	onShow() {
-		console.log(this)
 		const html = this.renderInputs()
 		this.$el.insertAdjacentHTML("afterbegin", html)
 	}
@@ -63,15 +62,6 @@ export class ShippingComponent extends Component {
 	}
 
 	renderInputs() {
-
-		// const selectVal = `${
-		// 	COUNTRIES.map((option) => (
-		// 		"<option value={option}>"
-		// 			"option"
-		// 		"</option>"
-		// 	))
-		// }
-		// `
 
 		const selectValues = COUNTRIES.map((option) => {
 			return `<option value=${option}>${option}</option>`
