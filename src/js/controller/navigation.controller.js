@@ -55,7 +55,14 @@ export const nextPageHandler = function ($currEl, $nextEl, $nav) {
 
 	activeTab.classList.add("checkout__breadcrumbs-item--active")
 
-
-	console.log($nav)
 	$nav.setCurrentTab($nextEl.getName)
+}
+
+
+export const removeAcriveTab = function () {
+	Array.from(
+		this.$el.querySelectorAll(".checkout__breadcrumbs-item")
+	).forEach((tab) => {
+		tab.classList.remove("checkout__breadcrumbs-item--active")
+	})
 }

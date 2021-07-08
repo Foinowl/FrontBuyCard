@@ -1,6 +1,7 @@
 import { createBillingObject } from "../model/billing.model"
 import { nextPageHandler } from "./navigation.controller"
 
+
 export const submitBillingHandler = function (event) {
 	event.preventDefault()
 
@@ -16,13 +17,13 @@ export const submitBillingHandler = function (event) {
 }
 
 
-
 export const clickShippingButton = function (event) {
 	if (event.target.className === "checkout__sameas-button") {
 		const shippModel = {
 			...{ email: "" },
 			...this.nav.tabs[0].component.shippModel,
 		}
+		console.log(shippModel);
 		this.hide()
 		this.setBillingModel(shippModel)
 		this.show()

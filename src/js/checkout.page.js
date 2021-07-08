@@ -4,13 +4,13 @@ import { ShippingComponent } from './views/shipping.component'
 import { BillingComponent } from "./views/billing.component"
 import { PaymentComponent } from "./views/payment.component"
 import { NavigationComponent } from "./views/navigation.component"
+import { CompletedComponent } from "./views/completed.component"
 
 import { submitShippingHandler } from "./controller/shipping.controller"
 import {
 	submitBillingHandler,
 } from "./controller/billing.controller"
 import { submitPaymentHandler } from "./controller/payment.controller"
-import { tabClickHandler } from "./controller/navigation.controller"
 
 
 export class Checkout extends Component {
@@ -21,8 +21,11 @@ export class Checkout extends Component {
 	init() {
 		this.navigation = new NavigationComponent("navigation")
 
+		this.competedPage = new CompletedComponent("completed", this.navigation)
+
 		this.paymentPage = new PaymentComponent(
 			"payment",
+			this.competedPage,
 			this.navigation
 		)
 		this.billingPage = new BillingComponent(
@@ -59,8 +62,5 @@ export class Checkout extends Component {
 			"submit",
 			submitPaymentHandler.bind(this.paymentPage)
 		)
-
-
-		this.navigation.nodeEl.addEventListener("click", tabClickHandler.bind(this.navigation))
 	}
 }

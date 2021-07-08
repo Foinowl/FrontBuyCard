@@ -9,7 +9,6 @@ export const submitShippingHandler = function (event) {
         type: this.$el.type.value,
         ...this.form.value(),
       })
-      console.log(this.shippModel)
 
       nextPageHandler(this, this.billingPage, this.nodeNav)
 		}

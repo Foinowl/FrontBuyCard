@@ -3,10 +3,11 @@ import { Form } from "../core/form"
 import { Validators } from "../core/validators"
 
 export class PaymentComponent extends Component {
-	constructor(id, nav) {
+	constructor(id, page,nav) {
 		super(id)
 		this.nav = nav
 		this.name = "payment"
+		this.completPage = page
 	}
 
 	init() {
@@ -23,7 +24,7 @@ export class PaymentComponent extends Component {
 				[Validators.required, "Эта поле обязательно"],
 				[Validators.cardDateRequired, "Введите корректную дату"],
 			],
-			pincode: [[Validators.required, "Эта поле обязательно"]],
+			pincod: [[Validators.required, "Эта поле обязательно"]],
 		})
 	}
 
