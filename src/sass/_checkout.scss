@@ -212,3 +212,124 @@
   text-decoration: underline;
   width: auto;
 }
+
+
+
+.checkout__completed {
+  margin-top: 25px;
+  color: #2b2525;
+  font-size: 16px;
+}
+
+.checkout__completed-title {
+  color: #5a1094;
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.checkout__email-title {
+  margin-top: 16px;
+  margin-bottom: 31px;
+}
+.checkout__email-span {
+  color: #5a1094;
+}
+.checkout__email-date {
+  display: block;
+  font-weight: 700;
+}
+.checkout__print {
+  background-color: transparent;
+  border: 0;
+  color: #5a1094;
+  font-size: 12px;
+  margin-top: 33px;
+  padding: 0;
+  text-decoration: underline;
+  width: auto;
+}
+
+
+.checkout__right-container-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7px;
+}
+
+.checkout__right-container-title h2{
+  color: #5a1094;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.checkout__right-container-title button{
+  color: #979797;
+  margin-top: 0;
+}
+
+
+
+.checkout__summary-items-list {
+  margin-top: 15px;
+}
+.checkout__cart-item {
+  border-bottom: 1px solid hsla(0,0%,59.2%,.2);
+  display: flex;
+  padding: 10px 7px;
+}
+.checkout__cart-img {
+  height: 45px;
+  margin-right: 10px;
+  width: 45px;
+}
+
+.checkout__cart-img img{
+  width: 100%;
+}
+
+.checkout__cart-desc {
+  color: #2b2525;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  justify-content: space-between;
+}
+
+.checkout__cart-desc-name {
+  color: #777879;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+.checkout__cart-price {
+  color: #777879;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+
+
+.checkout__order-report {
+  border-bottom: 1px solid hsla(0,0%,59.2%,.2);
+  color: #777879;
+  font-size: 12px;
+  padding: 12px 7px;
+}
+
+.checkout__order-report li{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout__order-report li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.checkout__order-total {
+  color: #431c5d;
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 13px 7px;
+}
